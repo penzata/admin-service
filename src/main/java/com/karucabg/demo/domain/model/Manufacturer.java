@@ -1,9 +1,14 @@
 package com.karucabg.demo.domain.model;
 
-import java.util.UUID;
+import javax.persistence.*;
 
+@Entity
+@Table(name="manufacturers")
 public class Manufacturer {
-    private UUID id;
+    @Id
+    @Column(columnDefinition = "serial")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
     private String address;
     private String country;
@@ -11,18 +16,18 @@ public class Manufacturer {
     public Manufacturer() {
     }
 
-    public Manufacturer(UUID id, String name, String address, String country) {
+    public Manufacturer(Integer id, String name, String address, String country) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.country = country;
     }
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

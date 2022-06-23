@@ -2,9 +2,7 @@ package com.karucabg.demo.rest.dto;
 
 import com.karucabg.demo.domain.model.Manufacturer;
 
-import java.util.UUID;
-
-public record ManufacturerDTO(UUID id,
+public record ManufacturerDTO(Integer id,
                               String name,
                               String address,
                               String country) {

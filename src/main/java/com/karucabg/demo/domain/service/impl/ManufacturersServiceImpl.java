@@ -19,4 +19,10 @@ public class ManufacturersServiceImpl implements ManufacturersService {
     public Manufacturer createManufacturer(Manufacturer manufacturer) {
         return manufacturerRepository.save(manufacturer);
     }
+
+    @Override
+    public Manufacturer getManufacturer(Integer id) {
+        return manufacturerRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Manufacturer not found "));
+    }
 }
