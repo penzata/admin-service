@@ -6,6 +6,8 @@ import com.karucabg.demo.domain.service.ManufacturersService;
 import com.karucabg.demo.persistence.repository.ManufacturerRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ManufacturersServiceImpl implements ManufacturersService {
 
@@ -24,5 +26,10 @@ public class ManufacturersServiceImpl implements ManufacturersService {
     public Manufacturer getManufacturer(Integer id) {
         return manufacturerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Manufacturer not found "));
+    }
+
+    @Override
+    public List<Manufacturer> getManufacturers() {
+        return manufacturerRepository.findAll();
     }
 }
