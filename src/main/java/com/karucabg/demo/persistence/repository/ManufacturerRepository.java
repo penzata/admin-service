@@ -10,4 +10,6 @@ import java.util.List;
 public interface ManufacturerRepository extends CrudRepository<Manufacturer, Integer> {
 
     List<Manufacturer> findAll();
+
+    void deleteById(Integer id);
 }

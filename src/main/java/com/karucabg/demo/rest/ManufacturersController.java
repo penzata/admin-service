@@ -41,4 +41,16 @@ public class ManufacturersController {
 
         return ManufacturerDTO.fromModel(manufacturer);
     }
+
+    @PutMapping("/{id}")
+    public ManufacturerDTO updateManufacturer(@PathVariable Integer id, @RequestBody ManufacturerDTO manufacturerDTO) {
+        Manufacturer manufacturer = manufacturersService.updateManufacturer(id, manufacturerDTO.toModel());
+
+        return ManufacturerDTO.fromModel(manufacturer);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteManufacturer(@PathVariable Integer id) {
+        manufacturersService.deleteManufacturer(id);
+    }
 }

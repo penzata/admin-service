@@ -11,4 +11,8 @@ public interface ManufacturersService {
     Manufacturer getManufacturer(Integer id);
 
     List<Manufacturer> getManufacturers();
+
+    Manufacturer updateManufacturer(Integer id, Manufacturer manufacturer);
+
+    void deleteManufacturer(Integer id);
 }

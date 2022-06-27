@@ -32,4 +32,21 @@ public class ManufacturersServiceImpl implements ManufacturersService {
     public List<Manufacturer> getManufacturers() {
         return manufacturerRepository.findAll();
     }
+
+    @Override
+    public Manufacturer updateManufacturer(Integer id, Manufacturer manufacturer) {
+        Manufacturer manufacturerToUpdate = manufacturerRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Manufacturer not found "));
+
+        manufacturerToUpdate.setAddress(manufacturer.getAddress());
+        manufacturerToUpdate.setName(manufacturer.getName());
+        manufacturerToUpdate.setCountry(manufacturer.getCountry());
+
+        return manufacturerRepository.save(manufacturerToUpdate);
+    }
+
+    @Override
+    public void deleteManufacturer(Integer id) {
+        manufacturerRepository.deleteById(id);
+    }
 }
