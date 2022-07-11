@@ -5,11 +5,9 @@ import com.karucabg.demo.domain.model.Model;
 import com.karucabg.demo.domain.service.ModelsService;
 import com.karucabg.demo.rest.dto.ManufacturerDTO;
 import com.karucabg.demo.rest.dto.ModelDTO;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.HashSet;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
@@ -24,14 +22,11 @@ public class ModelsController {
     }
 
     @GetMapping()
-    public HashSet<ModelDTO> getModels() {
-        HashSet<Model> models = (HashSet<Model>) modelsService.getModels();
+    public List<ModelDTO> getModels() {
 
-        return (HashSet<ModelDTO>) models.stream()
+        return modelsService.getModels().stream()
                 .map(ModelDTO::fromModel)
         .collect(Collectors.toList());
-
     }
 
-
-}
+    }

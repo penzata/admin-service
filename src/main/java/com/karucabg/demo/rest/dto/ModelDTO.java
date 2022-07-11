@@ -11,6 +11,7 @@ public record ModelDTO(Integer id,
         return new ModelDTO(model.getId(),
                 model.getManufacturerId(),
                 model.getName());
-
     }
+
 }
+

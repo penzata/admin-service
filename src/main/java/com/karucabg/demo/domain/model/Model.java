@@ -4,14 +4,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="models")
-public class Model extends Manufacturer{
+public class Model {
     @Id
     @Column(columnDefinition = "serial")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private final Integer manufacturerId;
+    private Integer manufacturerId;
     private String name;
 
+    public Model() {
+    }
 
     public Model(Integer id, Integer manufacturerId, String name) {
         this.id = id;
@@ -19,12 +21,10 @@ public class Model extends Manufacturer{
         this.name = name;
     }
 
-    @Override
     public Integer getId() {
         return id;
     }
 
-    @Override
     public void setId(Integer id) {
         this.id = id;
     }
@@ -33,13 +33,16 @@ public class Model extends Manufacturer{
         return manufacturerId;
     }
 
-    @Override
+    public void setManufacturerId(Integer manufacturerId) {
+        this.manufacturerId = manufacturerId;
+    }
+
     public String getName() {
         return name;
     }
 
-    @Override
     public void setName(String name) {
         this.name = name;
     }
 }
+
