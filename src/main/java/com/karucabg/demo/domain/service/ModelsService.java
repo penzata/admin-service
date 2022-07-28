@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface ModelsService {
 
+    Model getModel(Integer id);
     List<Model> getModels();
     }
