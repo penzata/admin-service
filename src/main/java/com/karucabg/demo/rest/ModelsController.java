@@ -21,6 +21,12 @@ public class ModelsController {
         this.modelsService = modelsService;
     }
 
+    @GetMapping("/{id}")
+    public ModelDTO getModel(@PathVariable Integer id) {
+
+        return ModelDTO.fromModel(modelsService.getModel(id));
+    }
+
     @GetMapping()
     public List<ModelDTO> getModels() {
 
