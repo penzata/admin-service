@@ -2,7 +2,9 @@ package com.karucabg.demo.rest;
 
 import com.karucabg.demo.domain.model.Manufacturer;
 import com.karucabg.demo.domain.service.ManufacturersService;
+import com.karucabg.demo.domain.service.ModelsService;
 import com.karucabg.demo.rest.dto.ManufacturerDTO;
+import com.karucabg.demo.rest.dto.ModelDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,9 +15,11 @@ import java.util.stream.Collectors;
 public class ManufacturersController {
 
     private final ManufacturersService manufacturersService;
+    private final ModelsService modelsService;
 
-    public ManufacturersController(ManufacturersService manufacturersService) {
+    public ManufacturersController(ManufacturersService manufacturersService, ModelsService modelsService) {
         this.manufacturersService = manufacturersService;
+        this.modelsService = modelsService;
     }
 
 
@@ -53,4 +57,13 @@ public class ManufacturersController {
     public void deleteManufacturer(@PathVariable Integer id) {
         manufacturersService.deleteManufacturer(id);
     }
+
+    @GetMapping("/{manufacturerId}/models")
+    public List<ModelDTO> getModelsByManufacturerId(@PathVariable Integer manufacturerId) {
+
+        return modelsService.getModelsByManufacturerId(manufacturerId).stream()
+                .map(ModelDTO::fromModel)
+                .collect(Collectors.toList());
+    }
+
 }

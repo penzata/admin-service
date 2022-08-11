@@ -1,9 +1,7 @@
 package com.karucabg.demo.rest;
 
-import com.karucabg.demo.domain.model.Manufacturer;
 import com.karucabg.demo.domain.model.Model;
 import com.karucabg.demo.domain.service.ModelsService;
-import com.karucabg.demo.rest.dto.ManufacturerDTO;
 import com.karucabg.demo.rest.dto.ModelDTO;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +19,13 @@ public class ModelsController {
         this.modelsService = modelsService;
     }
 
+    @PostMapping
+    public ModelDTO createModel(@RequestBody ModelDTO modelDTO) {
+        Model model = modelsService.createModel(modelDTO.toModel());
+
+        return ModelDTO.fromModel(model);
+    }
+
     @GetMapping("/{id}")
     public ModelDTO getModel(@PathVariable Integer id) {
 
@@ -34,5 +39,18 @@ public class ModelsController {
                 .map(ModelDTO::fromModel)
         .collect(Collectors.toList());
     }
+
+    @PutMapping("/{id}")
+    public ModelDTO updateModel(@PathVariable Integer id, @RequestBody ModelDTO modelDTO) {
+        Model model = modelsService.updateModel(id, modelDTO.toModel());
+
+        return ModelDTO.fromModel(model);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteModel(@PathVariable Integer id) {
+        modelsService.deleteModel(id);
+    }
+
 
     }

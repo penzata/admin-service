@@ -4,6 +4,7 @@ package com.karucabg.demo.domain.service.impl;
 import com.karucabg.demo.domain.model.Manufacturer;
 import com.karucabg.demo.domain.service.ManufacturersService;
 import com.karucabg.demo.persistence.repository.ManufacturerRepository;
+import com.karucabg.demo.rest.exceptionsHandler.ManufacturerNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class ManufacturersServiceImpl implements ManufacturersService {
     @Override
     public Manufacturer getManufacturer(Integer id) {
         return manufacturerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Manufacturer not found "));
+                .orElseThrow(() -> new ManufacturerNotFoundException(id));
     }
 
     @Override
@@ -36,7 +37,7 @@ public class ManufacturersServiceImpl implements ManufacturersService {
     @Override
     public Manufacturer updateManufacturer(Integer id, Manufacturer manufacturer) {
         Manufacturer manufacturerToUpdate = manufacturerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Manufacturer not found "));
+                .orElseThrow(() -> new ManufacturerNotFoundException(id));
 
         manufacturerToUpdate.setAddress(manufacturer.getAddress());
         manufacturerToUpdate.setName(manufacturer.getName());

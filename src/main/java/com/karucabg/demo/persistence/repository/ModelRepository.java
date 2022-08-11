@@ -10,5 +10,9 @@ import java.util.List;
 @Repository
 public interface ModelRepository extends CrudRepository<Model, Integer> {
 
+
     List<Model> findAll();
+
+    List<Model> findByManufacturerId(Integer manufacturerId);
+
 }

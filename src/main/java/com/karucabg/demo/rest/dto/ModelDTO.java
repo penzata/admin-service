@@ -6,6 +6,10 @@ public record ModelDTO(Integer id,
                        Integer manufacturerId,
                        String name) {
 
+
+    public Model toModel() {
+        return new Model(id, manufacturerId, name);
+    }
     public static ModelDTO fromModel(Model model) {
 
         return new ModelDTO(model.getId(),
