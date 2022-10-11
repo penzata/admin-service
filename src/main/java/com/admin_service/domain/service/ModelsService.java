@@ -1,9 +1,7 @@
-package com.karucabg.demo.domain.service;
+package com.admin_service.domain.service;
 
-import com.karucabg.demo.domain.model.Model;
-import org.springframework.stereotype.Service;
+import com.admin_service.domain.model.Model;
 
-import java.util.HashSet;
 import java.util.List;
 
 public interface ModelsService {

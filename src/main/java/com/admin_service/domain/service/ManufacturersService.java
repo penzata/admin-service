@@ -1,7 +1,7 @@
-package com.karucabg.demo.domain.service;
+package com.admin_service.domain.service;
 
 
-import com.karucabg.demo.domain.model.Manufacturer;
+import com.admin_service.domain.model.Manufacturer;
 
 import java.util.List;
 

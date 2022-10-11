@@ -1,4 +1,4 @@
-package com.karucabg.demo.rest.exceptionsHandler;
+package com.admin_service.rest.exceptionsHandler;
 
 
 public class ManufacturerNotFoundException extends RuntimeException{

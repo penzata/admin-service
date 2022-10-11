@@ -1,10 +1,9 @@
-package com.karucabg.demo.persistence.repository;
+package com.admin_service.persistence.repository;
 
-import com.karucabg.demo.domain.model.Model;
+import com.admin_service.domain.model.Model;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashSet;
 import java.util.List;
 
 @Repository

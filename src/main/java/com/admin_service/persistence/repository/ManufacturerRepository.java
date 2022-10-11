@@ -1,6 +1,6 @@
-package com.karucabg.demo.persistence.repository;
+package com.admin_service.persistence.repository;
 
-import com.karucabg.demo.domain.model.Manufacturer;
+import com.admin_service.domain.model.Manufacturer;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

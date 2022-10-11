@@ -1,4 +1,4 @@
-package com.karucabg.demo.rest.exceptionsHandler;
+package com.admin_service.rest.exceptionsHandler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

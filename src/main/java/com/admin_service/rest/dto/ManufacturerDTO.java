@@ -1,6 +1,6 @@
-package com.karucabg.demo.rest.dto;
+package com.admin_service.rest.dto;
 
-import com.karucabg.demo.domain.model.Manufacturer;
+import com.admin_service.domain.model.Manufacturer;
 
 public record ManufacturerDTO(Integer id,
                               String name,

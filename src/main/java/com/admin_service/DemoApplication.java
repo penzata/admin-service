@@ -1,4 +1,4 @@
-package com.karucabg.demo;
+package com.admin_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

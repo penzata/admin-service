@@ -1,10 +1,10 @@
-package com.karucabg.demo.domain.service.impl;
+package com.admin_service.domain.service.impl;
 
 
-import com.karucabg.demo.domain.model.Manufacturer;
-import com.karucabg.demo.domain.service.ManufacturersService;
-import com.karucabg.demo.persistence.repository.ManufacturerRepository;
-import com.karucabg.demo.rest.exceptionsHandler.ManufacturerNotFoundException;
+import com.admin_service.domain.model.Manufacturer;
+import com.admin_service.domain.service.ManufacturersService;
+import com.admin_service.persistence.repository.ManufacturerRepository;
+import com.admin_service.rest.exceptionsHandler.ManufacturerNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

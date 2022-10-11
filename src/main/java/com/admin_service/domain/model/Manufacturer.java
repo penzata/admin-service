@@ -1,4 +1,4 @@
-package com.karucabg.demo.domain.model;
+package com.admin_service.domain.model;
 
 import javax.persistence.*;
 

@@ -1,8 +1,8 @@
-package com.karucabg.demo.rest;
+package com.admin_service.rest;
 
-import com.karucabg.demo.domain.model.Model;
-import com.karucabg.demo.domain.service.ModelsService;
-import com.karucabg.demo.rest.dto.ModelDTO;
+import com.admin_service.domain.model.Model;
+import com.admin_service.domain.service.ModelsService;
+import com.admin_service.rest.dto.ModelDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
