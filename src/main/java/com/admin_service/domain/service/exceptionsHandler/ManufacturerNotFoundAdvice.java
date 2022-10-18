@@ -1,4 +1,4 @@
-package com.admin_service.rest.exceptionsHandler;
+package com.admin_service.domain.service.exceptionsHandler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-public class ModelNotFoundAdvice {
+public class ManufacturerNotFoundAdvice {
 
     @ResponseBody
-    @ExceptionHandler(ModelNotFoundException.class)
+    @ExceptionHandler(ManufacturerNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String modelNotFoundHandler(ModelNotFoundException ex) {
+    String modelNotFoundHandler(ManufacturerNotFoundException ex) {
         return ex.getMessage();
     }
+
 }

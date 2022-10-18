@@ -3,7 +3,7 @@ package com.admin_service.domain.service.impl;
 import com.admin_service.domain.model.Model;
 import com.admin_service.domain.service.ModelsService;
 import com.admin_service.persistence.repository.ModelRepository;
-import com.admin_service.rest.exceptionsHandler.ModelNotFoundException;
+import com.admin_service.domain.service.exceptionsHandler.ModelNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -44,7 +44,6 @@ public class ModelsServiceImpl implements ModelsService {
         Model modelToUpdate = modelRepository.findById(id)
                 .orElseThrow(() -> new ModelNotFoundException(id));
 
-        modelToUpdate.setId(model.getId());
         modelToUpdate.setManufacturerId(model.getManufacturerId());
         modelToUpdate.setName(model.getName());
 

@@ -1,4 +1,4 @@
-package com.admin_service.rest.exceptionsHandler;
+package com.admin_service.domain.service.exceptionsHandler;
 
 
 public class ManufacturerNotFoundException extends RuntimeException{

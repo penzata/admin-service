@@ -4,7 +4,7 @@ package com.admin_service.domain.service.impl;
 import com.admin_service.domain.model.Manufacturer;
 import com.admin_service.domain.service.ManufacturersService;
 import com.admin_service.persistence.repository.ManufacturerRepository;
-import com.admin_service.rest.exceptionsHandler.ManufacturerNotFoundException;
+import com.admin_service.domain.service.exceptionsHandler.ManufacturerNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
